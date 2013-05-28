@@ -280,7 +280,21 @@ Write (defparameter *contrib-dir* \"/usr/local/lib/clfswm/\") in ~A.~%"
       (leave-second-mode))))
 
 
+(defun add-empty-frame ()
+  "Add an empty frame in the current frame"
+  (when (frame-p (current-child))
+    (push (create-frame) (frame-child (current-child))))
+  (leave-second-mode))
 
+(defun add-empty-or-wrap-frame ()
+  "Add an empty frame in the current frame or wrap around the current child"
+  (if (frame-p (current-child))
+      (push (create-frame) (frame-child (current-child)))
+      (let ((frame (create-frame))
+	    (parent (find-parent-frame (current-child))))
+	(push frame (frame-child parent))
+	(push (current-child) (frame-child frame))))
+  (leave-second-mode))
 
 (defun add-default-frame ()
   "Add a default frame in the current frame"
