@@ -190,6 +190,17 @@ Write (defparameter *contrib-dir* \"/usr/local/lib/clfswm/\") in ~A.~%"
   (show-current-root)
   (leave-second-mode))
 
+(defun add-new-root ()
+  "Add new root to the list of roots"
+  (let* ((root (find-root (current-child)))
+         (newroot (create-frame))
+         (x (query-number "New root X position" (root-x root)))
+         (y (query-number "New root Y position" (root-y root)))
+         (w (query-number "New root widht" (root-w root)))
+         (h (query-number "New root height" (root-h root))))
+    (add-frame newroot *root-frame*)
+    (define-as-root newroot x y w h)))
+
 (defun change-current-root-geometry ()
   "Change the current root geometry"
   (let* ((root (find-root (current-child)))
