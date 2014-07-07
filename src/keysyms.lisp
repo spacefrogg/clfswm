@@ -1914,6 +1914,7 @@
 (cl-define-keysym #x1008FF10 "XF86Standby")
 (cl-define-keysym #x1008FF11 "XF86AudioLowerVolume")
 (cl-define-keysym #x1008FF12 "XF86AudioMute")
+(cl-define-keysym #x1008FFb2 "XF86AudioMicMute")
 (cl-define-keysym #x1008FF13 "XF86AudioRaiseVolume")
 (cl-define-keysym #x1008FF14 "XF86AudioPlay")
 (cl-define-keysym #x1008FF15 "XF86AudioStop")
