@@ -1911,6 +1911,8 @@
 (cl-define-keysym #x10070004 "XeroxPointerButton4")
 (cl-define-keysym #x10070005 "XeroxPointerButton5")
 (cl-define-keysym #x1008FF01 "XF86ModeLock")
+(cl-define-keysym #x1008FF02 "XF86MonBrightnessUp")
+(cl-define-keysym #x1008FF03 "XF86MonBrightnessDown")
 (cl-define-keysym #x1008FF10 "XF86Standby")
 (cl-define-keysym #x1008FF11 "XF86AudioLowerVolume")
 (cl-define-keysym #x1008FF12 "XF86AudioMute")
