@@ -295,6 +295,14 @@
 	  *circulate-parent* nil)
     (circulate-mode :subchild-direction +1)))
 
+(defun select-previous-subchild ()
+  "Select the previous subchild"
+  (when (and (frame-p (current-child))
+	     (frame-p (frame-selected-child (current-child))))
+    (setf *circulate-orig* (frame-child (current-child))
+	  *circulate-parent* nil)
+    (circulate-mode :subchild-direction -1)))
+
 
 (defun select-next-child-simple ()
   "Select the next child (do not enter in circulate mode)"
